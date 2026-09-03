@@ -10,9 +10,7 @@
   "icon": "assets/subsense/icon.png",
   "environment": "client",
   "entrypoints": {
-    "fabric-datagen": [
-      "pl.panocha.subsense.client.SubSenseDataGenerator"
-    ],
+    "fabric-datagen": [],
     "client": [
       "pl.panocha.subsense.client.SubSenseClient"
     ],
