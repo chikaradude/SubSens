@@ -35,6 +35,10 @@ public abstract class OptionsMixin {
     private static final OptionInstance.SliderableValueSet<Double> SUBSENSE_RANGE =
             new OptionInstance.SliderableValueSet<>() {
 
+                private Double exactValue;
+                private long exactSliderBits;
+                private boolean hasExactValue;
+
                 @Override
                 public Optional<Double> validateValue(Double value) {
                     if (!Double.isFinite(value)) {
@@ -50,16 +54,28 @@ public abstract class OptionsMixin {
 
                 @Override
                 public double toSliderValue(Double value) {
-                    double slider =
+                    double slider = Math.clamp(
                             (value - SUBSENSE_MIN)
-                                    / (SUBSENSE_MAX - SUBSENSE_MIN);
+                                    / (SUBSENSE_MAX - SUBSENSE_MIN),
+                            0.0,
+                            1.0
+                    );
 
-                    return Math.clamp(slider, 0.0, 1.0);
+                    this.exactValue = value;
+                    this.exactSliderBits = Double.doubleToRawLongBits(slider);
+                    this.hasExactValue = true;
+
+                    return slider;
                 }
 
                 @Override
                 public Double fromSliderValue(double slider) {
                     slider = Math.clamp(slider, 0.0, 1.0);
+
+                    if (this.hasExactValue
+                            && Double.doubleToRawLongBits(slider) == this.exactSliderBits) {
+                        return this.exactValue;
+                    }
 
                     return SUBSENSE_MIN
                             + slider * (SUBSENSE_MAX - SUBSENSE_MIN);
