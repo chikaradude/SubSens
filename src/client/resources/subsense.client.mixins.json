@@ -1,9 +1,9 @@
 {
   "required": true,
-  "minVersion": "0.8",
-  "package": "pl.panocha.subsense.mixin.client",
+  "package": "pl.panocha.subsense.client.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
+    "OptionsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

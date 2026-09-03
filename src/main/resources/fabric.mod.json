@@ -7,26 +7,23 @@
   "authors": [],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/subsense/icon.png",
+  "icon": "assets/icon.png",
   "environment": "client",
   "entrypoints": {
-    "fabric-datagen": [],
     "client": [
       "pl.panocha.subsense.client.SubSenseClient"
-    ],
-    "main": [
-      "pl.panocha.subsense.SubSense"
     ]
   },
+
   "mixins": [
-    "subsense.mixins.json",
     {
       "config": "subsense.client.mixins.json",
       "environment": "client"
     }
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
-    "minecraft": "${minecraft_version}"
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25"
   }
 }
