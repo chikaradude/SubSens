@@ -11,9 +11,10 @@
 - No dependencies
 
 ## How it works
-By default, Minecraft limits mouse sensitivity to values between `0.0` and `1.0`.
 
-**SubSens** extends the lower end of that range, allowing negative values.
+By default, Minecraft limits mouse sensitivity to values between `0.0` and `1.0`. However, Minecraft's `0.0` is not actually 0. There is still some camera movement left.
+
+**SubSens** extends the lower end of Minecraft's default sensitivity range, allowing you to go all the way down to the actual `0`.
 
 ## Coverting sensitivity to match cm/360
 
