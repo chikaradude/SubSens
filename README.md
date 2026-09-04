@@ -1,39 +1,41 @@
 # SubSens
 
-**SubSens** is a simple, lightweight, client-side Fabric mod that allows Minecraft's mouse sensitivity to go negative while keeping it precise.
+**SubSens** is a simple and lightweight mod that allows even lower sensitivity in Minecraft.
+
+It is especially useful when you want to have the exact **same sensitivity across different games**, but you play at **high DPI with low in-game sensitivity**.
 
 ## Features
 
-- Allows sensitivity slider go down to roughly `-67%`, which is basically the limit of camera movement
-- Stores precise sensitivity value directly in `options.txt`
-- Supports proper negative `mouseSensitivity` values
+- Allows sensitivity slider go down to roughly `-67%`
+- Stores precise number directly in `options.txt`
+- Supports negative `mouseSensitivity` values
 - No separate menus or config files
 - No dependencies
 
 ## How it works
 
-By default, Minecraft limits mouse sensitivity to values between `0.0` and `1.0`. However, Minecraft's `0.0` is not actually 0. There is still some camera movement left.
+By default, your mouse sensitivity somewhere between `0.0` and `1.0`. However, the game's zero is not the **actual zero**.
 
-**SubSens** extends the lower end of Minecraft's default sensitivity range, allowing you to go all the way down to the actual `0`.
+**SubSens** extends the lower end of the default sensitivity range, allowing you to go all the way down to **true 0 sensitivity**, which means basically **no camera movement at all**.
 
-## Coverting sensitivity to match cm/360
+## Calculating correct value
+Use some **sensitivity converters that allows negative Minecraft sensitivity values**.
 
-If you already have a Minecraft sensitivity for one DPI and want to switch to another DPI while keeping the same physical hand movements, use:
+You can also do it manually by using this formula:
 
 ```text
 newSens = (oldDPI / newDPI)^(1/3) × (oldSens + 1/3) - 1/3
 ```
 
-Example:
+Personal use case as an example:
 
 ```text
-oldSens = 0.00066961
-oldDPI  = 690
-newDPI  = 800
-newSens = -0.01539956185845284
+current mouseSensitivity = 0.00066961
+current DPI  = 690
+desired DPI  = 800
+desired mouseSensitivity = -0.01539956185845284
 ```
-
-You can also use sensitivity converters that provide the correct negative `mouseSensitivity` values.
+That's also the reason why I created this mod in the first place.
 
 ## Support
 **SubSens** is free and open source.
