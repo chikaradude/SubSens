@@ -8,17 +8,16 @@
 - Stores precise sensitivity value directly in `options.txt`
 - Supports proper negative `mouseSensitivity` values
 - No separate menus or config files
-- Fully client-side
 - No dependencies
 
 ## How it works
-Minecraft normally limits mouse sensitivity to values between `0.0` → `1.0`.
+By default, Minecraft limits mouse sensitivity to values between `0.0` and `1.0`.
 
 **SubSens** extends the lower end of that range, allowing negative values.
 
 ## Coverting sensitivity to match cm/360
 
-If you already have a Minecraft sensitivity value for one DPI and want to switch to another DPI while keeping the same physical movements, use:
+If you already have a Minecraft sensitivity for one DPI and want to switch to another DPI while keeping the same physical hand movements, use:
 
 ```text
 newSens = (oldDPI / newDPI)^(1/3) × (oldSens + 1/3) - 1/3
@@ -33,7 +32,7 @@ newDPI  = 800
 newSens = -0.01539956185845284
 ```
 
-You can also use sensitivity converters that provide the correct negative `mouseSensitivity values.
+You can also use sensitivity converters that provide the correct negative `mouseSensitivity` values.
 
 ## Support
 **SubSens** is free and open source.
