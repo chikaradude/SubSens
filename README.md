@@ -14,7 +14,7 @@ It is especially useful when you want to have the exact **same sensitivity acros
 
 ## How it works
 
-By default, your mouse sensitivity somewhere between `0.0` and `1.0`. However, the game's zero is not the **actual zero**.
+By default, your mouse sensitivity is somewhere between `0.0` and `1.0`. However, the game's zero is not the **actual zero**.
 
 **SubSens** extends the lower end of the default sensitivity range, allowing you to go all the way down to **true 0 sensitivity**, which means basically **no camera movement at all**.
 
