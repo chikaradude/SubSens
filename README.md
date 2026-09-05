@@ -18,7 +18,7 @@ By default, your mouse sensitivity is somewhere between `0.0` and `1.0`. However
 
 **SubSens** extends the lower end of the default sensitivity range, allowing you to go all the way down to **true 0 sensitivity**, which means basically **no camera movement at all**.
 
-## Calculating correct value
+## Calculating correct value (options.txt)
 Use some **sensitivity converters that allows negative Minecraft sensitivity values**.
 
 You can also do it manually by using this formula:
